@@ -62,6 +62,10 @@ function deleteInvalids(array) {
 // >>>05
 function monthlySavings(arr, livingCost) {
 
+    if (Array.isArray(arr) === false || typeof livingCost !== "number") {
+        return "Invalid Input"
+    }
+
     let tax = [];
     let lower3000Amounts = 0;
     for (const number of arr) {
@@ -88,7 +92,5 @@ function monthlySavings(arr, livingCost) {
     else if (afterTaxTotalEarn < livingCost) {
         return "Earn More"
     }
-
+    return savingsAmount;
 }
-const savings = monthlySavings([5000, 5000], 5000);
-console.log(savings)
