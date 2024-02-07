@@ -79,13 +79,16 @@ function monthlySavings(arr, livingCost) {
     }
 
     const afterTaxAmount = beforeTaxAmount * 20 / 100;
-
     const afterTaxTotalEarn = lower3000Amounts + beforeTaxAmount - afterTaxAmount;
-
-
     const savingsAmount = afterTaxTotalEarn - livingCost
-    return savingsAmount;
+
+    if (afterTaxTotalEarn > livingCost) {
+        return `Total Savings: ${savingsAmount}`;
+    }
+    else if (afterTaxTotalEarn < livingCost) {
+        return "Earn More"
+    }
 
 }
-const savings = monthlySavings([1000, 2000, 2500], 5000);
+const savings = monthlySavings([5000, 5000], 5000);
 console.log(savings)
