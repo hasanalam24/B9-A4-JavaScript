@@ -39,8 +39,8 @@ function deleteInvalids(array) {
     return withOutNanValue;
 
 }
-const result = deleteInvalids([1, null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }])
-console.log(result);
+// const result = deleteInvalids([1, null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }])
+// console.log(result);
 
 
 
@@ -57,3 +57,35 @@ console.log(result);
 
 // }
 // console.log(password({ name: "kolimuddin", birthYear: 1999, siteName: "google" }));
+
+
+// >>>05
+function monthlySavings(arr, livingCost) {
+
+    let tax = [];
+    let lower3000Amounts = 0;
+    for (const number of arr) {
+        if (number >= 3000) {
+            tax.push(number)
+        }
+        else {
+            lower3000Amounts = lower3000Amounts + number;
+        }
+    }
+
+    let beforeTaxAmount = 0;
+    for (const taxCount of tax) {
+        beforeTaxAmount = beforeTaxAmount + taxCount;
+    }
+
+    const afterTaxAmount = beforeTaxAmount * 20 / 100;
+
+    const afterTaxTotalEarn = lower3000Amounts + beforeTaxAmount - afterTaxAmount;
+
+
+    const savingsAmount = afterTaxTotalEarn - livingCost
+    return savingsAmount;
+
+}
+const savings = monthlySavings([1000, 2000, 2500], 5000);
+console.log(savings)
