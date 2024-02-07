@@ -46,20 +46,22 @@ function deleteInvalids(array) {
 
 
 
-// >>04
-
-// function password(obj) {
-//     if (typeof obj !== 'object' || !obj.name || !obj.birthYear || !obj.siteName) {
-//         return "Invalid Input"
-//     }
-
-//     return obj.siteName + '#' + obj.name + '@' + obj.birthYear
-
-// }
-// console.log(password({ name: "kolimuddin", birthYear: 1999, siteName: "google" }));
 
 
-// >>>05
+function password(obj) {
+    if (typeof obj !== 'object' || !obj.name || !obj.birthYear || !obj.siteName || obj.birthYear <= 999) {
+        return "Invalid Input"
+    }
+
+    else {
+        return obj.siteName + '#' + obj.name + '@' + obj.birthYear
+    }
+
+}
+
+
+
+
 function monthlySavings(arr, livingCost) {
 
     if (Array.isArray(arr) === false || typeof livingCost !== "number") {
