@@ -18,6 +18,7 @@ function calculateMoney(ticketSale) {
 
 
 
+
 // 03>>
 function deleteInvalids(array) {
 
@@ -44,9 +45,7 @@ function deleteInvalids(array) {
 
 
 
-
-
-
+// >>>04
 
 function password(obj) {
     if (typeof obj !== 'object' || !obj.name || !obj.birthYear || !obj.siteName || obj.birthYear <= 999) {
@@ -60,7 +59,7 @@ function password(obj) {
 }
 
 
-
+// >>>05
 
 function monthlySavings(arr, livingCost) {
 
