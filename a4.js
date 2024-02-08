@@ -1,4 +1,4 @@
-// 01>.
+
 
 function calculateMoney(ticketSale) {
     if (ticketSale < 0) {
@@ -16,36 +16,39 @@ function calculateMoney(ticketSale) {
 }
 
 
+function checkName(name) {
+
+    const lastLetter = name[name.length - 1];
+    if (typeof name !== 'string') {
+        return "Invalid";
+    }
+    else if (lastLetter.toLowerCase() == 'a' || lastLetter.toLowerCase() == 'e' || lastLetter.toLowerCase() == 'i' || lastLetter.toLowerCase() == 'o' || lastLetter.toLowerCase() == 'u' || lastLetter.toLowerCase() == 'w' || lastLetter.toLowerCase() == 'y') {
+        return 'Good Name';
+    }
+
+    else {
+        return 'Bad Name';
+    }
+
+}
 
 
-
-// 03>>
 function deleteInvalids(array) {
-
-
+    if (Array.isArray(array) === false) {
+        return "Invalid";
+    }
     let number = [];
     for (const numbers of array) {
         if (typeof numbers === 'number') {
-            number.push(numbers)
+            number.push(numbers);
         }
     }
 
-    let withOutNanValue = []
-    for (const ValueNan of number) {
-        if (ValueNan > 0) {
-            withOutNanValue.push(ValueNan)
-        }
-    }
-
+    const withOutNanValue = number.filter(x => !Number.isNaN(x));
     return withOutNanValue;
 
 }
-// const result = deleteInvalids([1, null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }])
-// console.log(result);
 
-
-
-// >>>04
 
 function password(obj) {
     if (typeof obj !== 'object' || !obj.name || !obj.birthYear || !obj.siteName || obj.birthYear <= 999) {
@@ -58,8 +61,6 @@ function password(obj) {
 
 }
 
-
-// >>>05
 
 function monthlySavings(arr, livingCost) {
 
@@ -88,10 +89,11 @@ function monthlySavings(arr, livingCost) {
     const savingsAmount = afterTaxTotalEarn - livingCost
 
     if (afterTaxTotalEarn > livingCost) {
-        return `Total Savings: ${savingsAmount}`;
+        return savingsAmount;
     }
     else if (afterTaxTotalEarn < livingCost) {
-        return "Earn More"
+        return "earn more"
     }
     return savingsAmount;
 }
+
